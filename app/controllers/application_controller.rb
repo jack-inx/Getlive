@@ -6,8 +6,10 @@ class ApplicationController < ActionController::Base
     if not current_admin_user.nil?
       #if params[:controller] == "devise/sessions"
       return admin_dashboard_path
-    else
+    elsif not current_recruiter.nil?
       return rec_index_path(current_user)
+    else
+      return all_jobs_path
       #end
       #@current_user = User.find(current_user)
       #    if resource.signup_status == "step2"

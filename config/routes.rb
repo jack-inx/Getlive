@@ -3,20 +3,31 @@ Getlive::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  devise_for :recruiters, :controllers => {:registrations => "recruiter_registrations" } do |f|
+  devise_for :recruiters, :controllers => {:registrations => "registrations"} do |f|
     get "/login" => "devise/sessions#new"
     get "/logout" => "devise/sessions#destroy"
     get "/signup" => "registrations#new"
-    match "/recruiter/home" => "recruiter_registrations#rec_index", :as => :rec_index
-    match "/search/resume" => "recruiter_registrations#search_resume", :as => :search_resume
   end
 
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"} do |f|
+    get "/login" => "devise/sessions#new"
+    get "/logout" => "devise/sessions#destroy"
+    get "/signup" => "registrations#new"
+  end
 
+  match "/auth/:provider/callback" => "authorizations#create"
+
+
+  match "/recruiter/home" => "home#rec_index", :as => :rec_index
+  match "/search/resume" => "home#search_resume", :as => :search_resume
   match "/aboutus" => "home#about_us", :as => :about_us
   match "/post/job" => "job_posts#job_post", :as => :job_post
   match "/create/job" => "job_posts#create_job", :as => :create_job
-  match "/jobs" => "job_posts#show_jobs", :as => :show_jobs
+  match "/jobs" => "job_posts#show_jobs", :as => :show_jobs #posted by recruiters
+  match "/all_jobs" => "job_seekers#all_jobs", :as => :all_jobs
+  match "/apply_for_job/:id" => "job_seekers#apply_for_job", :as => :apply_for_job
+  match "/apply_without_signup/:id" => "job_seekers#apply_without_signup", :as => :apply_without_signup
+  match "/create_unregistered_user" => "job_seekers#create_unregistered_user", :as => :create_user_record
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

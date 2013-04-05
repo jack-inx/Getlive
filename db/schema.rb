@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130328123031) do
+ActiveRecord::Schema.define(:version => 20130404114008) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,12 +46,27 @@ ActiveRecord::Schema.define(:version => 20130328123031) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "authorizations", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "countries", :force => true do |t|
+    t.string   "iso"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "job_posts", :force => true do |t|
     t.integer  "recruiter_id"
     t.string   "job_title"
     t.string   "position"
-    t.string   "country"
-    t.string   "state"
+    t.integer  "country_id"
+    t.integer  "state_id"
     t.string   "city"
     t.string   "zip_code"
     t.integer  "salary"
@@ -60,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20130328123031) do
     t.text     "job_description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "start_date"
   end
 
   create_table "recruiters", :force => true do |t|
@@ -87,6 +103,24 @@ ActiveRecord::Schema.define(:version => 20130328123031) do
   add_index "recruiters", ["email"], :name => "index_recruiters_on_email", :unique => true
   add_index "recruiters", ["reset_password_token"], :name => "index_recruiters_on_reset_password_token", :unique => true
 
+  create_table "states", :force => true do |t|
+    t.integer  "country_id"
+    t.string   "iso"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "unregistered_users", :force => true do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone_number"
+    t.string   "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -104,6 +138,10 @@ ActiveRecord::Schema.define(:version => 20130328123031) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone_number"
+    t.string   "message"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

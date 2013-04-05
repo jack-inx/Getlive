@@ -1,3 +1,4 @@
 <% @jobs.each do |f| %>
-  <%= link_to f.job_title, "#" %><br />
+  <%= link_to f.job_title, "#" %>&nbsp;at&nbsp;
+  <%= link_to f.city, "#" %><br />
 <% end %>

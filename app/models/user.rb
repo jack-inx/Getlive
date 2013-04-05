@@ -9,4 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name,
     :position_title, :experience_summary, :phone_number, :linkedin_url,
     :twitter_url, :role
+
+  has_many :authorizations
+  
 end

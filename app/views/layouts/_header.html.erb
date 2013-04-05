@@ -3,7 +3,12 @@
 <% elsif current_user %>
   <%= link_to "sign out", destroy_user_session_path, :method => :delete %><br />
 <% else %>
-  <%= link_to "signin as recruiter", new_recruiter_session_path %><br />
-  <%= link_to "signin as user", new_user_session_path %><br />
-  <%= link_to "signup as user", new_user_registration_path %><br />
+  <div class="rec_left">
+    <%= link_to "signin as recruiter", new_recruiter_session_path %><br />
+    <%= link_to "signin as user", new_user_session_path %><br />
+  </div>
+  <div class="rec_right">
+    <%= link_to "signup as user", new_user_registration_path %><br />
+    <%= link_to "Browse Jobs", all_jobs_path %><br />
+  </div>
 <% end %>

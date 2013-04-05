@@ -7,6 +7,14 @@ class HomeController < ApplicationController
   def about_us
     
   end
+  
+  def rec_index
+
+  end
+
+  def search_resume
+
+  end
 
 end
 
