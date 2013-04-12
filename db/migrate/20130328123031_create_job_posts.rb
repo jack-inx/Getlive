@@ -4,8 +4,8 @@ class CreateJobPosts < ActiveRecord::Migration
       t.integer :recruiter_id
       t.string :job_title
       t.string :position
-      t.string :country
-      t.string :state
+      t.integer :country_id
+      t.integer :state_id
       t.string :city
       t.string :zip_code
       t.integer :salary
