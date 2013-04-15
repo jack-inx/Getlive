@@ -26,6 +26,7 @@ Getlive::Application.routes.draw do
   match "/jobs" => "job_posts#show_jobs", :as => :show_jobs #posted by recruiters
   match "/all_jobs" => "job_seekers#all_jobs", :as => :all_jobs
   match "/apply_for_job/:id" => "job_seekers#apply_for_job", :as => :apply_for_job
+  match "/upload" => "job_seekers#upload_file"
   match "/apply_without_signup/:id" => "job_seekers#apply_without_signup", :as => :apply_without_signup
   match "/create_unregistered_user" => "job_seekers#create_unregistered_user", :as => :create_user_record
   # The priority is based upon order of creation:

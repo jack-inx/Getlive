@@ -1,1 +1,16 @@
-<%= "appy_for_job.html" %>
+# Show the job description
+<%= render "/share/job_description", :f => @job %>
+#Option for CV
+<%= link_to 'Apply with new resume',"#",:id=>"apply_button" %> 
+<div class="uploadCV hidden">
+	<h1>File Upload</h1>
+	<%= form_tag '/upload', :multipart => true do %>
+	<p>
+		<label for="file">File to Upload</label>
+		<%= file_field_tag "file" %>
+	</p>
+	<p>
+		<%= submit_tag %>
+	</p>
+	<% end %>
+</div>

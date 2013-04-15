@@ -11,5 +11,5 @@ class User < ActiveRecord::Base
     :twitter_url, :role
 
   has_many :authorizations
-  
+  has_many :attached_files, :as => :attachment
 end
