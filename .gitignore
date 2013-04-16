@@ -13,3 +13,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+#ignore all public files
+/public/*
+
+#ignore schema.rb file
+db/schema.rb
