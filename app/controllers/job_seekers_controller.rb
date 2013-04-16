@@ -20,7 +20,7 @@ class JobSeekersController < ApplicationController
 
       # tmp upload file
       upload_files(file)
-      #cleanup(@path)
+      cleanup(@path)
 
       current_user.attached_files.create(:dumpfile => file)
       current_user.job_portals.create(:job_post_id => @job_post_id)
