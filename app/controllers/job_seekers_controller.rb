@@ -14,14 +14,16 @@ class JobSeekersController < ApplicationController
 
   def upload_file
     file = params[:file]
+    @job_post_id = params[:job_id].to_i
 
     if file && checkformat(file.original_filename)
-      
+
       # tmp upload file
       upload_files(file)
       #cleanup(@path)
-      
+
       current_user.attached_files.create(:dumpfile => file)
+      current_user.job_portals.create(:job_post_id => @job_post_id)
       flash[:notice] = "You can apply more jobs"
       redirect_to all_jobs_path
 
@@ -59,7 +61,7 @@ class JobSeekersController < ApplicationController
           end
         elsif @user.save!(:validate => false)
           @user.attached_files.create(:dumpfile =>file)
-
+          @user.job_portals.create(:job_post_id => @job_post_id)
           flash[:notice] = "User created and you have successfully applied for this job."
           redirect_to all_jobs_path
         else
