@@ -1,0 +1,6 @@
+--- 
+cursor_positions: 
+  - :path: app/controllers/home_controller.rb
+    :cursor_offset: 0
+    :timestamp: 2013-04-17 12:00:59 +05:30
+files_to_retain: 0

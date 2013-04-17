@@ -1,6 +1,7 @@
 <% if current_recruiter %>
   <%= link_to "sign out", destroy_recruiter_session_path, :method => :delete %><br />
 <% elsif current_user %>
+  <%= link_to "Hey #{current_user}", destroy_user_session_path, :method => :delete %><br />
   <%= link_to "sign out", destroy_user_session_path, :method => :delete %><br />
 <% else %>
   <div class="rec_left">

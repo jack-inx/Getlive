@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130404114008) do
+ActiveRecord::Schema.define(:version => 20130416062616) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(:version => 20130404114008) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "attached_files", :force => true do |t|
+    t.integer  "attachment_id"
+    t.string   "attachment_type"
+    t.string   "dumpfile_file_name"
+    t.string   "dumpfile_content_type"
+    t.integer  "dumpfile_file_size"
+    t.datetime "dumpfile_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "authorizations", :force => true do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -57,6 +68,14 @@ ActiveRecord::Schema.define(:version => 20130404114008) do
   create_table "countries", :force => true do |t|
     t.string   "iso"
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "job_portals", :force => true do |t|
+    t.integer  "candidate_id"
+    t.string   "candidate_type"
+    t.integer  "job_post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
