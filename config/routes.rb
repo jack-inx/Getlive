@@ -22,10 +22,15 @@ Getlive::Application.routes.draw do
   match "/search/resume" => "home#search_resume", :as => :search_resume
   match "/aboutus" => "home#about_us", :as => :about_us
   match "/post/job" => "job_posts#job_post", :as => :job_post
+  match "/list_of_applied" => "job_posts#show_applied_candidate"
+  
+  match "/candidate_details/:type/:id" => 'job_posts#candidate_details'
+  
   match "/create/job" => "job_posts#create_job", :as => :create_job
   match "/jobs" => "job_posts#show_jobs", :as => :show_jobs #posted by recruiters
   match "/all_jobs" => "job_seekers#all_jobs", :as => :all_jobs
   match "/apply_for_job/:id" => "job_seekers#apply_for_job", :as => :apply_for_job
+  match "/upload" => "job_seekers#upload_file"
   match "/apply_without_signup/:id" => "job_seekers#apply_without_signup", :as => :apply_without_signup
   match "/create_unregistered_user" => "job_seekers#create_unregistered_user", :as => :create_user_record
   # The priority is based upon order of creation:
