@@ -1,4 +1,4 @@
-1366182121
+1366182387
 AddFieldsToRecruiters	/home/ror_inx/Projects/Getlive/db/migrate/20130328092411_add_fields_to_recruiters.rb	class AddFieldsToRecruiters 
 AddFieldsToUsers	/home/ror_inx/Projects/Getlive/db/migrate/20130402125848_add_fields_to_users.rb	class AddFieldsToUsers 
 AddStartDateToJobPost	/home/ror_inx/Projects/Getlive/db/migrate/20130401090305_add_start_date_to_job_post.rb	class AddStartDateToJobPost 
