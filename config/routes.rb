@@ -22,11 +22,12 @@ Getlive::Application.routes.draw do
   match "/search/resume" => "home#search_resume", :as => :search_resume
   match "/aboutus" => "home#about_us", :as => :about_us
   match "/post/job" => "job_posts#job_post", :as => :job_post
-  match "/list_of_applied" => "job_posts#show_applied_candidate"
+  match "/candidates/:id" => "job_posts#show_applied_candidate"
   
   match "/candidate_details/:type/:id" => 'job_posts#candidate_details'
   
   match "/create/job" => "job_posts#create_job", :as => :create_job
+  match 'my_post' => 'job_posts#my_post'
   match "/jobs" => "job_posts#show_jobs", :as => :show_jobs #posted by recruiters
   match "/all_jobs" => "job_seekers#all_jobs", :as => :all_jobs
   match "/apply_for_job/:id" => "job_seekers#apply_for_job", :as => :apply_for_job

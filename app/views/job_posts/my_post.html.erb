@@ -1,0 +1,10 @@
+<p>
+	List of posted Jobs
+</p>
+<% @all_post.each do |f| %>
+<% if not f.job_title.eql?('') %>
+<p>
+	<%= f.job_title %> <%= f.position %> <%= link_to 'Candidates', "/candidates/#{f.id}" %>
+</p>
+<% end %>
+<% end %>
