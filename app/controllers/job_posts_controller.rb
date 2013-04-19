@@ -1,3 +1,5 @@
+require 'docx'
+
 class JobPostsController < ApplicationController
   def job_post
     @job_post = JobPost.new
@@ -50,22 +52,15 @@ class JobPostsController < ApplicationController
       @candidate = User.find params[:id]
       @file = file =Rails.root.join('public'+ @candidate.attached_files.last.dumpfile.to_s)
       file = file.to_s.split('?')[0]
-      p "======================================="
-        p @filename = @candidate.attached_files.last.dumpfile_file_name
-        p @type = @candidate.attached_files.last.dumpfile_content_type
-        p "======candidate details ====="
-      File.open(file, "r") { |f| @data = f.read
-      # send_file file,
-      # :type => @candidate.attached_files.last.dumpfile_content_type,
-      # :file_name => @candidate.attached_files.last.dumpfile_file_name,
-      # :disposition => 'inline'
-      }
+       
+        @filename = @candidate.attached_files.last.dumpfile
+     
     else
       @candidate = UnregisteredUser.find params[:id]
-      p "======================================="
-        p @filename = @candidate.attached_files.last.dumpfile_file_name
-        p @type = @candidate.attached_files.last.dumpfile_content_type
-        p "======candidate details ====="
+      
+       @filename = @candidate.attached_files.last.dumpfile_file_name
+       @type = @candidate.attached_files.last.dumpfile_content_type
+      
     end
   end
 
