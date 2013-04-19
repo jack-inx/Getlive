@@ -1,5 +1,3 @@
-require 'docx'
-
 class JobPostsController < ApplicationController
   def job_post
     @job_post = JobPost.new
