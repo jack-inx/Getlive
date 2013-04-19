@@ -183,3 +183,43 @@ h1#Slogo a {
 	margin: 0 auto;
 }
 
+
+/************* Recruiter Dashboard ***************/
+
+.intopHeader { width:100%; background:url(../assets/top-header-bg1.png) repeat-x left top; }
+.headerSection { padding:26px 0 18px; float:left; width:1000px;}
+h1#slogo { float:left; padding:0 26px 0 15px; }
+h1#slogo a { width:162px; height:75px; background:url(../assets/logo-small.png) no-repeat 0 0; text-indent:-9999px; display:block; }
+
+#menu { margin:0; padding: 0; list-style-type: none; height: 38px; width:97%; float:left; }
+#menu li { float: left; margin: 0; background:url(../assets/line.png) no-repeat left top; padding:0 1px 0 0; }
+/*#menu li.last { background:none;}*/
+#menu li a { text-decoration: none; display: block; padding: 0 20px; line-height: 38px; color: #fff; }
+#menu_wrapper ul { margin:0; }
+
+#menu_wrapper.blue ul { background: #174a65; border-top:#0f2c3c 1px solid; border-bottom:#0f2c3c 1px solid;}
+#menu_wrapper.blue a {color: #fff;}
+#menu_wrapper.blue li a:hover, #menu_wrapper.blue li.active a { background: #1671a1; color: #fff;}
+#menu_wrapper.blue {background: url(../assets/blue-bg.png) no-repeat right top; float: right; width: 690px; margin:19px 0 0;}
+#menu_wrapper.blue div {background: url(../assets/blue-bg.png) no-repeat left; float:left; height:40px; width: 12px;}
+
+.contentBg { background:url(../assets/headertitle-bg.png) repeat-x left top; height:95px; width:100%;}
+.content { float:left; width:1000px;}
+.contentSection { float:left; width:1000px; position:relative;}
+.contentSection  h3 { font-size:33px; color:#fff; float:left; padding:0 0 0 18px; line-height:95px;}
+.contentSection .upArrow { background:url(../assets/up-arrow.png) no-repeat ; position:absolute; bottom:0; left:33px; height:11px; width:14px; }
+.contentSection .dashboardIcon { background:url(../assets/dashboard-icon.png) no-repeat; position:absolute; bottom:0; right:30px; height:77px; width:84px; }
+.userBox {float:left; background:#fff; border:#c2c2c2 1px solid; width:960px; margin:24px 0;-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; padding:20px;}
+.userBox .userBg { background:url(../assets/user-bg.png) no-repeat 0 0; width:133px; height:133px; float:left; padding:7px; float:left;}
+.userBox .userText p{ padding-bottom:5px; margin:0;}
+.userBox .userText p a { color:#dc4441;}
+.userBox .userText p a:hover {text-decoration:underline;}
+.userBox ul.socialIcon { float:left; padding:5px 0 0; margin:0; list-style:none;}
+.userBox ul.socialIcon li{ float:left; padding:0 8px 0 0; list-style:none;}
+.boxSection { float:left; width:1000px;}
+.boxSection .box { padding:0 50px 0 0; float:left;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+ #menu_wrapper.blue  { width: 699px;  }
+}
+#menu_wrapper.blue { width/*\**/: 735px\9; }
+

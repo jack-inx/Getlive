@@ -1,4 +1,5 @@
 class JobPostsController < ApplicationController
+  layout :recruiter
   def job_post
     @job_post = JobPost.new
     @job_post.job_post_and_skills.new
