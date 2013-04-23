@@ -1,0 +1,9 @@
+<p>
+	Job Description
+</p>
+
+<% jobpath = root_url.to_s + "job_detail/#{@job.id}" %>
+
+
+<%= @job.job_title%> | <%= @job[:position] %> | <%= link_to "Apply", apply_for_job_path(@job.id) %>
+<%= render :partial => "share/social_script", :locals => {:jobpath => jobpath} %>

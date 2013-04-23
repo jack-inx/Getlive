@@ -1,5 +1,12 @@
 <% @all_jobs.each do |f| %>
-  <%= link_to f.job_title, "#" %>&nbsp;at&nbsp;
-  <%= link_to f.city, "#" %>&nbsp;&nbsp;&nbsp;&nbsp;
-  <%= link_to "Apply", apply_for_job_path(f.id) %><br />
+<div>
+	<%= link_to f.job_title, "/job_detail/#{f.id}" %> |
+	<%= link_to f.city, "#" %> |
+	<%= link_to "Apply", apply_for_job_path(f.id) %>
+</div>
+<br />
+<div>
+	<% jobpath = root_url.to_s + "job_detail/#{f.id}" %>
+	<%= render :partial => "share/social_script", :locals => {:jobpath => jobpath} %>
+</div>
 <% end %>

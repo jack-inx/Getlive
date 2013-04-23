@@ -33,6 +33,7 @@ Getlive::Application.routes.draw do
   match 'my_post' => 'job_posts#my_post'
   match "/jobs" => "job_posts#show_jobs", :as => :show_jobs #posted by recruiters
   match "/all_jobs" => "job_seekers#all_jobs", :as => :all_jobs
+  match "/job_detail/:id" => "job_seekers#job_description"
   match "/apply_for_job/:id" => "job_seekers#apply_for_job", :as => :apply_for_job
   match "/upload" => "job_seekers#upload_file"
   match "/apply_without_signup/:id" => "job_seekers#apply_without_signup", :as => :apply_without_signup
