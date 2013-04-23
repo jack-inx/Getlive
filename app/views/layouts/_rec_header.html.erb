@@ -4,17 +4,40 @@
 		<div id="menu_wrapper" class="blue">
 			<div class="left"></div>
 			<ul id="menu">
+
+				<% if params[:action].eql?('rec_index')  %>
 				<li class="active">
-					<a href="#">Dashboard</a>
-				</li>
+					<% else %>
 				<li>
-					<a href="#">Post Jobs</a>
+					<% end %>
+					<%= link_to "Dashboard", rec_index_path %>
+					<!-- <a href="#">Dashboard</a> -->
 				</li>
+				<% if params[:action].eql?('job_post')%>
+				<li class="active">
+					<% else %>
 				<li>
-					<a href="#">Manage Jobs</a>
+					<% end %>
+				
+					<%= link_to "Post Jobs", job_post_path %>
+					<!-- <a href="#">Post Jobs</a> -->
 				</li>
+				<% if params[:action].eql?('my_post') %>
+				<li class="active">
+					<% else %>
 				<li>
-					<a href="#">Search Resume</a>
+					<% end %>
+					<%= link_to "Manage Jobs", my_post_path %>
+					<!-- <a href="#">Manage Jobs</a> -->
+				</li>
+
+				<% if params[:action].eql?('search_resume') %>
+				<li class="active">
+					<% else %>
+				<li>
+					<% end %>
+					<%= link_to "Seach Resume", search_resume_path %>
+					<!-- <a href="#">Search Resume</a> -->
 				</li>
 				<li>
 					<a href="#">Profile Settings</a>

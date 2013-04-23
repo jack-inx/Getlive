@@ -1,5 +1,5 @@
 class JobPostsController < ApplicationController
-  layout :recruiter
+  layout "recruiter"
   def job_post
     @job_post = JobPost.new
     @job_post.job_post_and_skills.new
@@ -35,6 +35,35 @@ class JobPostsController < ApplicationController
     @all_post = @recruitor.job_posts
   end
 
+  def edit_job_post
+
+    @job_post = JobPost.where(:recruiter_id=>current_recruiter.id,:id=>params[:id]).first
+  end
+  
+  def update_job_post
+    
+    @job_post = JobPost.where(:recruiter_id=>current_recruiter.id,:id=>params[:id]).first
+    if @job_post.update_attributes(params[:job_post])
+      redirect_to my_post_path
+      flash[:notice] = "Job Post successfully updated!"
+    else
+      flash[:notice] = "Please try again"
+      redirect_to :back
+    end
+  end
+  
+  def delete_job_post
+    
+    @job_post = JobPost.where(:recruiter_id=>current_recruiter.id,:id=>params[:id]).first
+    if @job_post.destroy
+      flash[:notice] = "Successfully deleted Job Post!"
+      redirect_to my_post_path
+    else
+      flash[:notice]= "Please try again!"
+      redirect_to :back
+    end
+  end
+
   def show_applied_candidate
     # List of candidate who have applied to a job
     list = JobPost.where(:recruiter_id=>current_recruiter.id,:id=>params[:id])
@@ -51,15 +80,15 @@ class JobPostsController < ApplicationController
       @candidate = User.find params[:id]
       @file = file =Rails.root.join('public'+ @candidate.attached_files.last.dumpfile.to_s)
       file = file.to_s.split('?')[0]
-       
-        @filename = @candidate.attached_files.last.dumpfile
-     
+
+      @filename = @candidate.attached_files.last.dumpfile
+
     else
       @candidate = UnregisteredUser.find params[:id]
-      
-       @filename = @candidate.attached_files.last.dumpfile_file_name
-       @type = @candidate.attached_files.last.dumpfile_content_type
-      
+
+      @filename = @candidate.attached_files.last.dumpfile_file_name
+      @type = @candidate.attached_files.last.dumpfile_content_type
+
     end
   end
 

@@ -23,6 +23,9 @@ Getlive::Application.routes.draw do
   match "/aboutus" => "home#about_us", :as => :about_us
   match "/post/job" => "job_posts#job_post", :as => :job_post
   match "/candidates/:id" => "job_posts#show_applied_candidate"
+  match "/edit_job_post/:id"=>"job_posts#edit_job_post"
+  put "/update_job_post"=>"job_posts#update_job_post"
+  delete "/delete_job_post/:id" => "job_posts#delete_job_post"
   
   match "/candidate_details/:type/:id" => 'job_posts#candidate_details'
   

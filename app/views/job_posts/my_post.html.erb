@@ -4,7 +4,8 @@
 <% @all_post.each do |f| %>
 <% if not f.job_title.eql?('') %>
 <p>
-	<%= f.job_title %> <%= f.position %> <%= link_to 'Candidates', "/candidates/#{f.id}" %>
+	<%= f.job_title %> <%= f.position %> <%= link_to 'Candidates', "/candidates/#{f.id}" %> <%= link_to "Edit", "/edit_job_post/#{f.id}" %> 
+	<%= link_to "Remove", "/delete_job_post/#{f.id}", :confirm =>"Are you sure", :method=>:delete %>
 </p>
 <% end %>
 <% end %>

@@ -1,9 +1,62 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
+<%#= link_to "List of Posted Job", my_post_path %>
 
-<%= link_to "Post a Job", job_post_path %><br />
-<%= link_to "Search Resume", search_resume_path %><br />
-<%= link_to "List of Posted Job", my_post_path %><br />
 <%#= link_to "Candidates applied", list_of_applied_path %>
+<div class="contentBg">
+	<div class="container">
+		<div class="content">
+			<div class="contentSection">
+				<h3>Get Live Dashboard</h3>
+				<div class="upArrow"></div>
+				<div class="dashboardIcon"></div>
+			</div>
+			<div class="userBox">
+				<div class="userBg"><img src="/assets/user.jpg" />
+				</div>
+				<div class="userText">
+					<p>
+						<strong><%= current_recruiter.full_name %></strong>
+					</p>
+					<p>
+						<%= current_recruiter.position_title %>
+					</p>
+					<p>
+						Toronto, ON, Canada
+					</p>
+					<p>
+						Get Live Solutions
+					</p>
+					<p>
+						<a href="mailto:<%= current_recruiter.email %>" title="<%= current_recruiter.email %>"><%= current_recruiter.email %></a>
+					</p>
+					<ul class="socialIcon">
+						<li>
+							<a href="#" title="Facebook"><img src="/assets/facebook-icon.png" alt="Facebook" /></a>
+						</li>
+						<li>
+							<%= link_to image_tag('twitter-icon.png'),"#{current_recruiter.twitter_url}", :alt =>"Twitter", :title=>"Twitter", :target=>"_blank" %>
+							<!-- <a href="#" title="Twitter"><img src="/assets/twitter-icon.png" alt="Twitter" /></a> -->
+						</li>
+						<li>
+							<%= link_to image_tag('linkedin-icon.png'),"https://#{current_recruiter.linkedin_url}", :alt =>"LinkedIn", :title=>"LinkedIn", :target=>"_blank" %>
+							<!-- <a href="#" title="LinkedIn"><img src="/assets/linkedin-icon.png" alt="LinkedIn" /></a> -->
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="boxSection">
+				<div class="box">
+					<%= link_to image_tag('find-resumes.png'), search_resume_path, :title => "Find Resumes", :alt =>"Find Resumes" %>
+					<!-- <a href="#" title="Find Resumes"><img src="/assets/find-resumes.png" alt="Find Resumes" title="Find Resumes" /></a> -->
+				</div>
+				<div class="box">
+					<%= link_to image_tag('help-wanted.png'), job_post_path, :alt=>"Help Wanted", :title=>"Help Wanted" %>
+					<!-- <a href="#" title="Help Wanted"><img src="/assets/help-wanted.png" alt="Help Wanted" title="Help Wanted" /></a> -->
+				</div>
+				<div class="fl">
+					<%= link_to image_tag('manage-jobs.png'), my_post_path, :alt=>"Manage Jobs", :title=>"Manage Jobs" %>
+					<!-- <a href="#" title="Manage Jobs"><img src="/assets/manage-jobs.png" alt="Manage Jobs" title="Manage Jobs" /></a> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

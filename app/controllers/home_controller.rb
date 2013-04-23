@@ -12,7 +12,10 @@ class HomeController < ApplicationController
   end
 
   def search_resume
-
+    @users = User.all
+    @unregistered = UnregisteredUser.all
+    @resumes = @users + @unregistered
+    render :layout => 'recruiter'
   end
 
 end

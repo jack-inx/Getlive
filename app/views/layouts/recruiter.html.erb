@@ -12,63 +12,12 @@
 
 	<body>
 		<div id="wrapper" class="intopHeader">
-
-			<%= render :partial=> "layouts/rec_header" %>
-
-			<div class="contentBg">
-				<div class="container">
-					<div class="content">
-						<div class="contentSection">
-							<h3>Get Live Dashboard</h3>
-							<div class="upArrow"></div>
-							<div class="dashboardIcon"></div>
-						</div>
-						<div class="userBox">
-							<div class="userBg"><img src="images/user.jpg" />
-							</div>
-							<div class="userText">
-								<p>
-									<strong>Stacy Kline</strong>
-								</p>
-								<p>
-									Sr. ERP Technical Recruiter
-								</p>
-								<p>
-									Toronto, ON, Canada
-								</p>
-								<p>
-									Get Live Solutions
-								</p>
-								<p>
-									<a href="mailto:Stacy.kline@getlivesolutions.com" title="Stacy.kline@getlivesolutions.com">Stacy.kline@getlivesolutions.com</a>
-								</p>
-								<ul class="socialIcon">
-									<li>
-										<a href="#" title="Facebook"><img src="images/facebook-icon.png" alt="Facebook" /></a>
-									</li>
-									<li>
-										<a href="#" title="Twitter"><img src="images/twitter-icon.png" alt="Twitter" /></a>
-									</li>
-									<li>
-										<a href="#" title="LinkedIn"><img src="images/linkedin-icon.png" alt="LinkedIn" /></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="boxSection">
-							<div class="box">
-								<a href="#" title="Find Resumes"><img src="images/find-resumes.png" alt="Find Resumes" title="Find Resumes" /></a>
-							</div>
-							<div class="box">
-								<a href="#" title="Help Wanted"><img src="images/help-wanted.png" alt="Help Wanted" title="Help Wanted" /></a>
-							</div>
-							<div class="fl">
-								<a href="#" title="Manage Jobs"><img src="images/manage-jobs.png" alt="Manage Jobs" title="Manage Jobs" /></a>
-							</div>
-						</div>
-					</div>
-				</div>
+			<div id="dashboard">
+				<%= render :partial =>"layouts/flashmsgbox" %>
 			</div>
+			<%= render :partial=> "layouts/rec_header" %>
+			<%= yield %>
+
 			<%= render "layouts/footer" %>
 		</div>
 
