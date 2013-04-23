@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
     :position_title, :experience_summary, :phone_number, :linkedin_url,
     :twitter_url, :role
 
-  has_many :authorizations
-  has_many :attached_files, :as => :attachment
-  has_many :job_portals, :as => :candidate
+  has_many :authorizations, :dependent => :destroy
+  has_many :attached_files, :as => :attachment, :dependent => :destroy
+  has_many :job_portals, :as => :candidate, :dependent => :destroy
   # collecting Users object
   def self.getObject(count)
     users = []

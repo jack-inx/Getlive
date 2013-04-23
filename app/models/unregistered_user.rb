@@ -1,8 +1,8 @@
 class UnregisteredUser < ActiveRecord::Base
 
   attr_accessible :email, :first_name, :last_name, :phone_number, :message
-  has_many :attached_files, :as => :attachment
-  has_many :job_portals, :as => :candidate
+  has_many :attached_files, :as => :attachment, :dependent => :destroy
+  has_many :job_portals, :as => :candidate, :dependent => :destroy
 
   #  has_attached_file :attachedfile
 
