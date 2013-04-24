@@ -7,8 +7,8 @@ class JobPost < ActiveRecord::Base
 
   belongs_to :job_post
 
-  has_one :country
+  belongs_to :country
   
-  has_one :state
+  belongs_to :state
 
 end

@@ -3,29 +3,29 @@ Getlive::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  devise_for :recruiters, :controllers => {:registrations => "registrations"} do |f|
+  devise_for :recruiters do |f|
     get "/login" => "devise/sessions#new"
     get "/logout" => "devise/sessions#destroy"
     get "/signup" => "registrations#new"
   end
 
-  devise_for :users, :controllers => {:registrations => "registrations"} do |f|
+  devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions" } do |f|
     get "/login" => "devise/sessions#new"
     get "/logout" => "devise/sessions#destroy"
-    get "/signup" => "registrations#new"
+    #get "/signup" => "devise/registrations#new"
+    match "/creating_jobseeker" => "registrations#creating_jobseeker", :as => :creating_jobseeker
   end
 
   match "/auth/:provider/callback" => "authorizations#create"
-
 
   match "/recruiter/home" => "home#rec_index", :as => :rec_index
   match "/search/resume" => "home#search_resume", :as => :search_resume
   match "/aboutus" => "home#about_us", :as => :about_us
   match "/post/job" => "job_posts#job_post", :as => :job_post
   match "/list_of_applied" => "job_posts#show_applied_candidate"
-  
+
   match "/candidate_details/:type/:id" => 'job_posts#candidate_details'
-  
+
   match "/create/job" => "job_posts#create_job", :as => :create_job
   match "/jobs" => "job_posts#show_jobs", :as => :show_jobs #posted by recruiters
   match "/all_jobs" => "job_seekers#all_jobs", :as => :all_jobs
@@ -33,6 +33,12 @@ Getlive::Application.routes.draw do
   match "/upload" => "job_seekers#upload_file"
   match "/apply_without_signup/:id" => "job_seekers#apply_without_signup", :as => :apply_without_signup
   match "/create_unregistered_user" => "job_seekers#create_unregistered_user", :as => :create_user_record
+  match "/signup/second_step/:id" => "job_seekers#signup_second_step", :as => :signup_second_step
+  match "/creating_user_info" => "job_seekers#creating_user_info", :as => :creating_user_info
+  match "/update_states" => "job_seekers#update_states"
+  match "/jobseeker/dashboard" => "job_seekers#jobseeker_dashboard", :as => :jobseeker_dashboard
+  
+  #match "/creating_jobseeker" => "job_seekers#creating_jobseeker", :as => :creating_jobseeker
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -84,9 +90,9 @@ Getlive::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'home#index'
 
-  # See how all your routes lay out with "rake routes"
+# See how all your routes lay out with "rake routes"
 
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+# This is a legacy wild controller route that's not recommended for RESTful applications.
+# Note: This route will make all actions in every controller accessible via GET requests.
+# match ':controller(/:action(/:id(.:format)))'
 end

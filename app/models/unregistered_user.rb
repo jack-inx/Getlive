@@ -16,4 +16,5 @@ class UnregisteredUser < ActiveRecord::Base
     end
     return users
   end
+  
 end

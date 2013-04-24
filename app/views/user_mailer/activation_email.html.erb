@@ -1,0 +1,4 @@
+<p>Dear <%= @user.user_info.first_name %>!</p>
+
+<p>To verify your email for Getlive, just click this link (or copy and paste it into your browser):
+<%= link_to 'Verification Link', confirmation_url(@user, :confirmation_token => @user.confirmation_token) ,:target => "_blank" %></p>

@@ -1,0 +1,156 @@
+<script type="text/javascript">
+	function get_states(country_id) {
+		jQuery.ajax({
+			url : "/update_states",
+			type : "GET",
+			data : {
+				"country_id" : country_id
+			},
+			dataType : "html",
+			success : function(data) {
+				jQuery("#statesDiv").html(data);
+			}
+		});
+	}
+
+
+	$(document).ready(function() {
+		$('#user_info_available_to_join').datepicker();
+	}); 
+</script>
+
+<%= form_for(@user_info, :url => creating_user_info_path(@user_info,:id => @id)) do |f| %> <h3>Personal Info</h3>
+<div>
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name, :autofocus => true %>
+</div>
+<br />
+<div>
+	<%= f.label :last_name %>
+	<%= f.text_field :last_name %>
+</div>
+<br />
+<div>
+	<%= f.label :job_title %>
+	<%= f.text_field :job_title %>
+</div>
+<br />
+<div>
+	<%= f.label :country_id %>
+	<%= select("country", "country_id", @countries.collect {|p| [ p.name, p.id  ] } ,{:prompt => 'Select Country'}, :onchange => "get_states(this.value)") %>
+	<%#= f.text_field :country_id %>
+</div>
+<br />
+<div id="statesDiv">
+	<%= render :partial => 'states', :object => @states %>
+	<%#= f.text_field :state_id %>
+</div>
+<br />
+<div>
+	<%= f.label :city %>
+	<%= f.text_field :city %>
+</div>
+<br />
+<div>
+	<%= f.label :zipcode %>
+	<%= f.text_field :zipcode %>
+</div>
+<br />
+<br />
+<h3>Tell Us About Yourself</h3>
+<div>
+	<%= f.label :years_of_exp %>
+	<%= f.select(:years_of_exp, ["1-3","3-5","5-8","8-10","10+"]) %>
+	<%#= f.text_field :years_of_exp %>
+</div>
+<br />
+<div>
+	<%= f.label :brief_summary %>
+	<%= f.text_area :brief_summary %>
+</div>
+<br />
+<div>
+	<%= f.label :available_to_join %>
+	<%#= f.date_select :available_to_join %>
+	<%= f.text_field :available_to_join %>
+</div>
+<br />
+
+<div>
+	<label>Current Status</label>
+	<br />
+	<label>Employed</label><%= f.radio_button :employment_status, "Employed" %> <label>UnEmployed</label><%= f.radio_button :employment_status, "UnEmployed" %>
+</div>
+<br />
+<br />
+<h3>Education</h3>
+<div>
+	<%= f.label :edu_level %>
+	<%= f.select(:edu_level, ["Masters Degree", "Bachelors Degree", "PHD", "Certification", "Others", "N/A"]) %>
+	<%#= f.text_field :edu_level %>
+</div>
+<br />
+<div>
+	<%= f.label :university %>
+	<%= f.text_field :university %>
+</div>
+<br />
+<br />
+<h3>Desired Employment</h3>
+<div>
+	<%= f.label :employment_type %>
+	<%= f.select(:employment_type, ["Full Time", "Contract", "N/A"]) %>
+	<%#= f.text_field :employment_type %>
+</div>
+<br />
+
+<div>
+	<%= f.label :job_title %>
+	<%= f.text_field :job_title %>
+</div>
+<br />
+<div>
+	<%= f.label :sal_expectation %>
+	<%= f.text_field :sal_expectation %>
+</div>
+<br />
+<div>
+	<%= f.label :hourly_expectation %>
+	<%= f.text_field :hourly_expectation %>
+</div>
+<br />
+<div>
+	<%= f.label :work_authorization %>
+	<%= f.select(:work_authorization, ["US Citizen","Green Card Holder", "Canadian Citizen", "Permanent Resident", "Work Visa"]) %>
+	<%#= f.text_field :work_authorization %>
+</div>
+<br />
+<div>
+	<%= f.label :willing_to_travel %>
+	<%= f.select(:willing_to_travel, ["25%","50%", "75%", "100%"]) %>
+	<%#= f.text_field :willing_to_travel %>
+</div>
+<br />
+<div>
+	<label>Security Clearance</label>
+	<br />
+	<label>Yes</label><%= f.radio_button :security_clearance, 1.to_i %> <label>No</label><%= f.radio_button :security_clearance, 0 %>
+</div>
+<br />
+<div>
+	<label>Interested In Relocation</label>
+	<br />
+	<label>Yes</label><%= f.radio_button :relocation_interest, 1 %> <label>No</label><%= f.radio_button :relocation_interest, 0 %>
+</div>
+<br />
+<div>
+	<%= f.label :resume %>
+	<br />
+	<%= f.file_field :attachedfile %>
+</div>
+<br />
+
+<div>
+	<%= f.submit "Submit" %>
+</div>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416062616) do
+ActiveRecord::Schema.define(:version => 20130419124023) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -139,6 +139,32 @@ ActiveRecord::Schema.define(:version => 20130416062616) do
     t.datetime "updated_at"
   end
 
+  create_table "user_infos", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "job_title"
+    t.integer  "country_id"
+    t.integer  "state_id"
+    t.string   "city"
+    t.string   "zipcode"
+    t.string   "years_of_exp"
+    t.text     "brief_summary"
+    t.string   "employment_status"
+    t.string   "available_to_join"
+    t.string   "edu_level"
+    t.string   "university"
+    t.string   "employment_type"
+    t.boolean  "security_clearance"
+    t.string   "sal_expectation"
+    t.string   "hourly_expectation"
+    t.boolean  "relocation_interest"
+    t.string   "work_authorization"
+    t.string   "willing_to_travel"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -160,6 +186,7 @@ ActiveRecord::Schema.define(:version => 20130416062616) do
     t.string   "last_name"
     t.string   "phone_number"
     t.string   "message"
+    t.string   "signup_status"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

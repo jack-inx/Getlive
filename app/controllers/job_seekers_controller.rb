@@ -1,4 +1,6 @@
 class JobSeekersController < ApplicationController
+
+  @@test = ''
   def all_jobs
     @all_jobs = JobPost.all
   end
@@ -36,6 +38,51 @@ class JobSeekersController < ApplicationController
   def apply_without_signup
     @job_post_id = params[:id].to_i
     @user = UnregisteredUser.new
+  end
+
+  def signup_second_step
+    @id = params[:id].to_i
+    @user_info = UserInfo.new()
+    @countries = Country.all
+    @states = State.all
+  end
+
+  def creating_user_info
+    file = params[:user_info][:attachedfile]
+    @id = params[:id].to_i
+    @user = User.find_by_id(@id)
+    if not params[:user_info][:attachedfile].nil?
+      if file && checkformat(file.original_filename)
+        #upload file temporarily
+        upload_files(file)
+        @user.attached_files.create(:dumpfile =>file)
+      end
+    end
+    params[:user_info].delete :attachedfile
+    @user_info = UserInfo.new(params[:user_info])
+    @user_info.user_id = @id
+    @user_info.country_id = params[:country][:country_id]
+    @user_info.state_id = params[:state][:state_id]
+    #@user.build_user_info(:country_id => params[:country][:country_id], :state_id => params[:state][:state_id])
+    if @user_info.save
+      @user.update_attributes(:signup_status => "step2")
+      Devise::Mailer.confirmation_instructions(@user).deliver
+      #UserMailer.activation_email(@user).deliver
+      redirect_to jobseeker_dashboard_path
+    else
+      redirect_to :back
+    end
+  end
+
+  
+
+  def jobseeker_dashboard
+
+  end
+
+  def update_states
+    @states = State.where(:country_id => params[:country_id])
+    render :partial => "states", :object => @states
   end
 
   def create_unregistered_user

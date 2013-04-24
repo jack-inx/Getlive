@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  first_name: MyString
+  last_name: MyString
+  job_title: MyString
+  country_id: 1
+  state_id: 1
+  city: MyString
+  zipcode: MyString
+  years_of_exp: 1
+  brief_summary: MyText
+  employment_status: MyString
+  available_to_join: 2013-04-18
+  edu_level: MyString
+  university: MyString
+  employment_type: MyString
+  security_clearance: false
+  sal_expectation: MyString
+  hourly_expectation: MyString
+  relocation_interest: false
+  work_authorization: MyString
+  willing_to_travel: MyString
+
+two:
+  user_id: 1
+  first_name: MyString
+  last_name: MyString
+  job_title: MyString
+  country_id: 1
+  state_id: 1
+  city: MyString
+  zipcode: MyString
+  years_of_exp: 1
+  brief_summary: MyText
+  employment_status: MyString
+  available_to_join: 2013-04-18
+  edu_level: MyString
+  university: MyString
+  employment_type: MyString
+  security_clearance: false
+  sal_expectation: MyString
+  hourly_expectation: MyString
+  relocation_interest: false
+  work_authorization: MyString
+  willing_to_travel: MyString
