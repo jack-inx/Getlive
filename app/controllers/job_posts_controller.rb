@@ -1,4 +1,5 @@
 class JobPostsController < ApplicationController
+
   layout "recruiter"
   def job_post
     @job_post = JobPost.new
@@ -39,9 +40,9 @@ class JobPostsController < ApplicationController
 
     @job_post = JobPost.where(:recruiter_id=>current_recruiter.id,:id=>params[:id]).first
   end
-  
+
   def update_job_post
-    
+
     @job_post = JobPost.where(:recruiter_id=>current_recruiter.id,:id=>params[:id]).first
     if @job_post.update_attributes(params[:job_post])
       redirect_to my_post_path
@@ -51,9 +52,9 @@ class JobPostsController < ApplicationController
       redirect_to :back
     end
   end
-  
+
   def delete_job_post
-    
+
     @job_post = JobPost.where(:recruiter_id=>current_recruiter.id,:id=>params[:id]).first
     if @job_post.destroy
       flash[:notice] = "Successfully deleted Job Post!"
@@ -89,6 +90,34 @@ class JobPostsController < ApplicationController
       @filename = @candidate.attached_files.last.dumpfile_file_name
       @type = @candidate.attached_files.last.dumpfile_content_type
 
+    end
+  end
+
+  # Recruiter's Profile
+  def show_profile
+    @recruiter = Recruiter.find params[:id]
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def update_profile
+    p params[:recruiter][:email].blank?
+    p params[:recruiter][:email].empty?
+    p "================="
+    if params[:id].eql?(current_recruiter.id.to_s)
+      @recruiter = Recruiter.find params[:id]
+      if @recruiter.update_attributes(params[:recruiter])
+        flash[:notice] = "Your Profile updated successfully!"
+        redirect_to rec_index_path
+      else
+        flash[:notice] = " #{@recruiter.errors.full_messages.join(', ')}"
+        redirect_to :back
+      end
+    else
+      flash[:notice] = "Unauthorized access!"
+      redirect_to :back
     end
   end
 

@@ -18,7 +18,7 @@
 					<% else %>
 				<li>
 					<% end %>
-				
+
 					<%= link_to "Post Jobs", job_post_path %>
 					<!-- <a href="#">Post Jobs</a> -->
 				</li>
@@ -39,11 +39,18 @@
 					<%= link_to "Seach Resume", search_resume_path %>
 					<!-- <a href="#">Search Resume</a> -->
 				</li>
+				
+				<% if params[:action].eql?('show_profile ') %>
+				<li classclass="active">
+					<% else %>
 				<li>
-					<a href="#">Profile Settings</a>
+					<% end %>
+					<%= link_to "Profile Settings","/profile/#{current_recruiter.id}" %>
+					<!-- <a href="#">Profile Settings</a> -->
 				</li>
 				<li>
-					<a href="#">Sign Out</a>
+					<%= link_to "Sign Out", destroy_recruiter_session_path, :method => :delete %>
+					<!-- <a href="#">Sign Out</a> -->
 				</li>
 			</ul>
 		</div>

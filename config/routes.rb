@@ -18,14 +18,19 @@ Getlive::Application.routes.draw do
   match "/auth/:provider/callback" => "authorizations#create"
 
 
-  match "/recruiter/home" => "home#rec_index", :as => :rec_index
-  match "/search/resume" => "home#search_resume", :as => :search_resume
-  match "/aboutus" => "home#about_us", :as => :about_us
-  match "/post/job" => "job_posts#job_post", :as => :job_post
-  match "/candidates/:id" => "job_posts#show_applied_candidate"
-  match "/edit_job_post/:id"=>"job_posts#edit_job_post"
-  put "/update_job_post"=>"job_posts#update_job_post"
-  delete "/delete_job_post/:id" => "job_posts#delete_job_post"
+  match "/recruiter/home"                         => "home#rec_index", :as => :rec_index
+  match "/search/resume"                          => "home#search_resume", :as => :search_resume
+  match "/aboutus"                                => "home#about_us", :as => :about_us
+  match "/post/job"                               => "job_posts#job_post", :as => :job_post
+  match "/candidates/:id"                         => "job_posts#show_applied_candidate"
+  match "/edit_job_post/:id"                      => "job_posts#edit_job_post"
+  put "/update_job_post"                          => "job_posts#update_job_post"
+  delete "/delete_job_post/:id"                   => "job_posts#delete_job_post"
+  match   "/profile/:id"                       => "job_posts#show_profile"
+  match "update_profile"                            => "job_posts#update_profile"
+  
+  resources :job_posts, :only =>[:update], :as    => :recruiter_path
+  #match "/update_profile"                         => "job_posts#update_profile"
   
   match "/candidate_details/:type/:id" => 'job_posts#candidate_details'
   
