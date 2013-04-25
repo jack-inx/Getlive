@@ -11,7 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20130419124023) do
+
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -80,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20130419124023) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "job_post_and_skills", :force => true do |t|
     t.integer  "job_post_id", :null => false
     t.integer  "skill_id",    :null => false
@@ -89,6 +92,8 @@ ActiveRecord::Schema.define(:version => 20130419124023) do
 
   add_index "job_post_and_skills", ["job_post_id", "skill_id"], :name => "index_job_post_and_skills_on_job_post_id_and_skill_id"
 
+=======
+>>>>>>> job_seeker_resume
   create_table "job_posts", :force => true do |t|
     t.integer  "recruiter_id"
     t.string   "job_title"

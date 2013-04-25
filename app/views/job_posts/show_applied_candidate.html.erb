@@ -1,8 +1,9 @@
 <h1> Candidate List</h1>
+
 <% @candidate_list.each do |list| %>
 
 <p>
-	<%= list.email %> <%= link_to "More", "candidate_details/#{list.class.to_s.downcase}/#{list.id}" %>
+	<%= list.email %> <%= link_to "More", "/candidate_details/#{list.class.to_s.downcase}/#{list.id}" %>
 </p>
 
 <% end%>

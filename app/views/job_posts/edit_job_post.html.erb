@@ -1,0 +1,6 @@
+<%= form_for @job_post, :url => update_job_post_path(:id=>@job_post) do |f| %>
+<%= render :partial =>"fieldsjobposts", :locals => {:f => f} %>
+<div class="actions">
+	<%= f.submit %>
+</div>
+<% end %>

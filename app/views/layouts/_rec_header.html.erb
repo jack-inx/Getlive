@@ -1,0 +1,59 @@
+<div id="header">
+	<div class="headerSection">
+		<h1 id="slogo"><a href="recruiter-signin.html" title="GLC - Get Live Consulting Inc">GLC - Get Live Consulting Inc</a></h1>
+		<div id="menu_wrapper" class="blue">
+			<div class="left"></div>
+			<ul id="menu">
+
+				<% if params[:action].eql?('rec_index')  %>
+				<li class="active">
+					<% else %>
+				<li>
+					<% end %>
+					<%= link_to "Dashboard", rec_index_path %>
+					<!-- <a href="#">Dashboard</a> -->
+				</li>
+				<% if params[:action].eql?('job_post')%>
+				<li class="active">
+					<% else %>
+				<li>
+					<% end %>
+
+					<%= link_to "Post Jobs", job_post_path %>
+					<!-- <a href="#">Post Jobs</a> -->
+				</li>
+				<% if params[:action].eql?('my_post') %>
+				<li class="active">
+					<% else %>
+				<li>
+					<% end %>
+					<%= link_to "Manage Jobs", my_post_path %>
+					<!-- <a href="#">Manage Jobs</a> -->
+				</li>
+
+				<% if params[:action].eql?('search_resume') %>
+				<li class="active">
+					<% else %>
+				<li>
+					<% end %>
+					<%= link_to "Seach Resume", search_resume_path %>
+					<!-- <a href="#">Search Resume</a> -->
+				</li>
+				
+				<% if params[:action].eql?('show_profile ') %>
+				<li classclass="active">
+					<% else %>
+				<li>
+					<% end %>
+					<%= link_to "Profile Settings","/profile/#{current_recruiter.id}" %>
+					<!-- <a href="#">Profile Settings</a> -->
+				</li>
+				<li>
+					<%= link_to "Sign Out", destroy_recruiter_session_path, :method => :delete %>
+					<!-- <a href="#">Sign Out</a> -->
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="cl"></div>

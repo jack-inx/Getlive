@@ -28,8 +28,10 @@ gem "omniauth-facebook"
 gem "omniauth-linkedin"
 
 group :development do
-  #gem 'better_errors'
-  #gem 'binding_of_caller'
+
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
+
 end
 
 # To use ActiveModel has_secure_password

@@ -18,17 +18,28 @@ Getlive::Application.routes.draw do
 
   match "/auth/:provider/callback" => "authorizations#create"
 
-  match "/recruiter/home" => "home#rec_index", :as => :rec_index
-  match "/search/resume" => "home#search_resume", :as => :search_resume
-  match "/aboutus" => "home#about_us", :as => :about_us
-  match "/post/job" => "job_posts#job_post", :as => :job_post
-  match "/list_of_applied" => "job_posts#show_applied_candidate"
+  match "/list_of_applied"                        => "job_posts#show_applied_candidate"
+  match "/recruiter/home"                         => "home#rec_index", :as => :rec_index
+  match "/search/resume"                          => "home#search_resume", :as => :search_resume
+  match "/aboutus"                                => "home#about_us", :as => :about_us
+  match "/post/job"                               => "job_posts#job_post", :as => :job_post
+  match "/candidates/:id"                         => "job_posts#show_applied_candidate"
+  match "/edit_job_post/:id"                      => "job_posts#edit_job_post"
+  put "/update_job_post"                          => "job_posts#update_job_post"
+  delete "/delete_job_post/:id"                   => "job_posts#delete_job_post"
+  match   "/profile/:id"                          => "job_posts#show_profile"
+  match "update_profile"                            => "job_posts#update_profile"
+
+  resources :job_posts, :only =>[:update], :as    => :recruiter_path
+  #match "/update_profile"                         => "job_posts#update_profile"
 
   match "/candidate_details/:type/:id" => 'job_posts#candidate_details'
 
   match "/create/job" => "job_posts#create_job", :as => :create_job
+  match 'my_post' => 'job_posts#my_post'
   match "/jobs" => "job_posts#show_jobs", :as => :show_jobs #posted by recruiters
   match "/all_jobs" => "job_seekers#all_jobs", :as => :all_jobs
+  match "/job_detail/:id" => "job_seekers#job_description"
   match "/apply_for_job/:id" => "job_seekers#apply_for_job", :as => :apply_for_job
   match "/upload" => "job_seekers#upload_file"
   match "/apply_without_signup/:id" => "job_seekers#apply_without_signup", :as => :apply_without_signup
@@ -37,7 +48,7 @@ Getlive::Application.routes.draw do
   match "/creating_user_info" => "job_seekers#creating_user_info", :as => :creating_user_info
   match "/update_states" => "job_seekers#update_states"
   match "/jobseeker/dashboard" => "job_seekers#jobseeker_dashboard", :as => :jobseeker_dashboard
-  
+
   #match "/creating_jobseeker" => "job_seekers#creating_jobseeker", :as => :creating_jobseeker
   # The priority is based upon order of creation:
   # first created -> highest priority.

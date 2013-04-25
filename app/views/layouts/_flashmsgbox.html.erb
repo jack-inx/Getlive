@@ -1,0 +1,32 @@
+<% if !flash[:notice].nil? or !flash[:error].nil? or !flash[:alert].nil? or !flash[:info].nil? %>
+  <div class="message_box" id="msgbox">
+    <div class="message_left">
+      <%#=image_tag("/assets/message_left1.png")%>
+    </div>
+    <div class="message_middle">
+      <%#=image_tag("/assets/message_icon1.png")%>
+      <p>
+        <% if not flash[:info].nil? %>
+          <%= flash[:info] %>
+        <% else %>
+          <%= flash[:notice] %><%= flash[:error] %> <%= flash[:alert] %>
+        <% end %>
+      </p>
+    </div>
+    <div class="message_right">
+      <a id="hidemsg" style="cursor:pointer;"><%#=image_tag("/assets/close_i.png")%></a>
+    </div>
+  </div>
+<% end %>
+
+<div class="clear"></div>
+
+<script type="text/javascript">
+  $(function() {
+    $('a#hidemsg').click(function () {
+      $('#msgbox').hide();
+
+    });
+    $('.message_box').delay(5000).fadeOut();
+  });
+</script>

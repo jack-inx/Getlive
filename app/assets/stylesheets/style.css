@@ -1,0 +1,274 @@
+@font-face {
+	font-family: 'MyriadProRegular';
+	src: url('../assets/myriadpro-regular.eot');
+	src: url('../assets/myriadpro-regular.eot') format('embedded-opentype'), url('../assets/myriadpro-regular.woff') format('woff'), url('../assets/myriadpro-regular.ttf') format('truetype'), url('../assets/myriadpro-regular.svg#MyriadProRegular') format('svg');
+}
+body, h1, h2, h3, form, ul, li, ol {
+	margin: 0;
+	padding: 0;
+}
+ul, ol {
+	list-style: none;
+}
+/* Floating */
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.cl {
+	clear: both;
+}
+/* Text align
+ .tal { text-align:left; }
+ .tac { text-align:center; }
+ .tar { text-align:right; }
+ .taj { text-align:justify; }
+ .vm { vertical-align:middle; }*/
+a {
+	color: #555;
+	text-decoration: none;
+}
+a:hover {
+	color: #000;
+}
+a, a img {
+	border: 0 none;
+	outline: none;
+	font-size: 14px;
+}
+body {
+	color: #555;
+	font-family: 'MyriadProRegular', Arial, Helvetica, sans-serif normal;
+	font-size: 14px;
+	line-height: 19px;
+	display: block;
+	background: url(../assets/main-bg.jpg) repeat 0 0 #CCC;
+}
+h1, h2, h3, h4, h5, h6 {
+	font: 16px/19px 'MyriadProRegular', Arial, Helvetica, sans-serif normal;
+}
+#wrapper {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.topHeader {
+	width: 100%;
+	background: url(../assets/top-header-bg.png) repeat-x left top;
+}
+.centerBg {
+	width: 100%;
+	background: url(../assets/people.png) no-repeat center 241px;
+	padding: 0;
+	margin: 0 auto;
+	height: 663px;
+}
+/* ............Top Header ............ */
+#header {
+	margin: 0 auto;
+	width: 1000px;
+}
+h1#logo {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 70px 0 0;
+}
+h1#logo a {
+	width: 208px;
+	height: 100px;
+	background: url(../assets/logo.png) no-repeat 0 0;
+	text-indent: -9999px;
+	display: block;
+	margin: 0 auto;
+}
+.headerText {
+	float: left;
+}
+h2.mainText {
+	padding: 65px 0 60px;
+	color: #dc4441;
+	font: 50px/50px 'MyriadProRegular', Arial, Helvetica, sans-serif normal;
+	text-align: center;
+}
+
+/* ............ center part ............ */
+.container {
+	margin: 0 auto;
+	width: 1000px;
+}
+ul.signInBox {
+	margin: 0 auto;
+	text-align: center;
+	padding: 0;
+	width: 370px;
+	height: 98px;
+	background: url(../assets/textbox-1.png) no-repeat left top;
+}
+ul.signInBox li {
+	height: 48px;
+}
+ul.signInBox li .inputText {
+	border: none;
+	width: 334px;
+	background: none;
+	line-height: 48px;
+	padding: 18px;
+	font: 14px/19px 'MyriadProRegular', Arial, Helvetica, sans-serif normal;
+}
+ul.signInBox li .signInBtn {
+	background: url(../assets/yellow-btn-b.png) left top;
+	padding: 0 0 0 5px;
+	height: 44px;
+	margin: 15px 0 0;
+}
+ul.signInBox li .signInBtn .signText {
+	background: url(../assets/yellow-btn-b.png) right -44px;
+	padding: 0 15px 0 0;
+	height: 44px;
+	width: 365px;
+	border: none;
+	color: #5c4d30;
+	font: 20px/20px 'MyriadProRegular', Arial, Helvetica, sans-serif normal;
+	cursor: pointer;
+	text-shadow: -1px 0px 0px #ffe1a6;
+}
+
+.has-js .label_check {/*padding-left: 22px;*/
+	width: 132px;
+}
+.has-js .label_check {
+	background: url(../assets/check-off.gif) no-repeat 0 3px;
+	margin: 10px 0 0;
+	float: left;
+}
+.has-js label.c_on {
+	background: url(../assets/check-on.gif) no-repeat 0 3px;
+}
+.has-js .label_check input, .has-js .label_radio input {
+	position: absolute;
+	left: -9999px;
+}
+a.pwLink {
+	margin: 10px 0 0;
+	float: right;
+}
+
+/* ............ Footer ............ */
+#mainfooter {
+	margin: 160px auto 0;
+	width: 100%;
+	background: url(../assets/bot-bg.gif) repeat-x left top;
+}
+#mainfooter .copyRight {
+	color: #828282;
+	font: 12px/19px 'MyriadProRegular', Arial, Helvetica, sans-serif normal;
+	text-align: center;
+	padding: 15px 0;
+}
+
+/************* Inner ***************/
+h1#Slogo {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 70px 0 0;
+}
+h1#Slogo a {
+	width: 162px;
+	height: 75px;
+	background: url(../assets/logo-small.png) no-repeat 0 0;
+	text-indent: -9999px;
+	display: block;
+	margin: 0 auto;
+}
+
+
+/************* Recruiter Dashboard ***************/
+
+.intopHeader { width:100%; background:url(../assets/top-header-bg1.png) repeat-x left top; }
+.headerSection { padding:26px 0 18px; float:left; width:1000px;}
+h1#slogo { float:left; padding:0 26px 0 15px; }
+h1#slogo a { width:162px; height:75px; background:url(../assets/logo-small.png) no-repeat 0 0; text-indent:-9999px; display:block; }
+
+#menu { margin:0; padding: 0; list-style-type: none; height: 38px; width:97%; float:left; }
+#menu li { float: left; margin: 0; background:url(../assets/line.png) no-repeat left top; padding:0 1px 0 0; }
+/*#menu li.last { background:none;}*/
+#menu li a { text-decoration: none; display: block; padding: 0 20px; line-height: 38px; color: #fff; }
+#menu_wrapper ul { margin:0; }
+
+#menu_wrapper.blue ul { background: #174a65; border-top:#0f2c3c 1px solid; border-bottom:#0f2c3c 1px solid;}
+#menu_wrapper.blue a {color: #fff;}
+#menu_wrapper.blue li a:hover, #menu_wrapper.blue li.active a { background: #1671a1; color: #fff;}
+#menu_wrapper.blue {background: url(../assets/blue-bg.png) no-repeat right top; float: right; width: 699px; margin:19px 0 0;}
+#menu_wrapper.blue div {background: url(../assets/blue-bg.png) no-repeat left; float:left; height:40px; width: 12px;}
+
+.contentBg { background:url(../assets/headertitle-bg.png) repeat-x left top; height:95px; width:100%;}
+.content { float:left; width:1000px;}
+.contentSection { float:left; width:1000px; position:relative;}
+.contentSection  h3 { font-size:33px; color:#fff; float:left; padding:0 0 0 18px; line-height:95px;}
+.contentSection .upArrow { background:url(../assets/up-arrow.png) no-repeat ; position:absolute; bottom:0; left:33px; height:11px; width:14px; }
+.contentSection .dashboardIcon { background:url(../assets/dashboard-icon.png) no-repeat; position:absolute; bottom:0; right:30px; height:77px; width:84px; }
+.userBox {float:left; background:#fff; border:#c2c2c2 1px solid; width:960px; margin:24px 0;-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; padding:20px;}
+.userBox .userBg { background:url(../assets/user-bg.png) no-repeat 0 0; width:133px; height:133px; float:left; padding:7px; float:left;}
+.userBox .userText p{ padding-bottom:5px; margin:0;}
+.userBox .userText p a { color:#dc4441;}
+.userBox .userText p a:hover {text-decoration:underline;}
+.userBox ul.socialIcon { float:left; padding:5px 0 0; margin:0; list-style:none;}
+.userBox ul.socialIcon li{ float:left; padding:0 8px 0 0; list-style:none;}
+.boxSection { float:left; width:1000px;}
+.boxSection .box { padding:0 50px 0 0; float:left;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+ #menu_wrapper.blue  { width: 699px;  }
+}
+#menu_wrapper.blue { width/*\**/: 735px\9; }
+
+
+
+/*********** Recruiter Profile Settings ***************/
+.contentSection .profileSetIcon { background:url(../assets/profile-users-icon.png) no-repeat; position:absolute; bottom:0; right:30px; height:82px; width:91px; }
+.userBox .profileSection { margin:0 auto; width:500px; text-align:center;}
+.userBox .profileSection ul { margin:0; padding:0; list-style:none;}
+.userBox .profileSection ul li { padding:0 0 11px; float:left;}
+.userBox .profileSection ul li label{ margin:0; padding:0 20px 0 0; list-style:none; width:102px; float:left; line-height:40px; text-align:right; font-size:16px; }
+.userBox .profileSection ul li .leftGreyBg { background:url(../assets/light-greybg.png) left top; padding:0 0 0 5px; height:41px; margin:0; float:left;}
+.userBox .profileSection ul li .leftGreyBg input {background:url(../assets/light-greybg.png) right -41px; padding:0 15px 0 5px; height:41px; width:290px; border:none; font-size:16px; line-height:20px; color:#555;}
+.leftMargin { margin:0 0 0 352px !important;}
+
+.marCent {width:350px; text-align:center; margin:0 0 0 372px;}
+.subBtn { background:url(../assets/orange-btn.png) left top; padding:0 0 0 5px; height:44px; margin:15px 15px 0 0; float:left; }
+.subBtn .signText { background:url(../assets/orange-btn.png) right -44px; padding:0 15px 0 8px; height:44px; width:130px; border:none; color:#fff; font:20px/20px 'MyriadProRegular', Arial, Helvetica, sans-serif normal; cursor:pointer; text-shadow: 0px -1px 0px #a15311; }
+.cancelBtn { background:url(../assets/grey-btn.png) left top; padding:0 0 0 5px; height:44px; margin:15px 15px 0 0; float:left; }
+.cancelBtn .signText { background:url(../assets/grey-btn.png) right -44px; padding:0 15px 0 8px; height:44px; width:130px; border:none; color:#fff; font:20px/20px 'MyriadProRegular', Arial, Helvetica, sans-serif normal; cursor:pointer; text-shadow: 0px -1px 0px #555; }
+
+.userBox .ciruserBg { background:url(../assets/circle-bg.png) no-repeat left top; width:145px; height:145px; margin:10px 0 30px 185px;}
+.userBox .ciruserBg .grUser { margin:8px auto;}
+
+.userBox .profileSection ul li .jqf1InpTextNormal input, .jqf1InpTextFocus input, .jqf1InpRadio input, .jqf1InpCheck input, .jqf1Txt textarea {margin:0px;padding:0px;border:0px;}
+.userBox .profileSection ul li .jqf1 input, .jqf1 textarea, .jqf1 select {font-family:inherit;font-size:inherit;font-weight:inherit;height: 39px !important; margin-top: -39px !important; }
+.userBox .profileSection ul li .jqf1Sel ul, .jqf1Sel ul li, .jqf1SelMulti ul, .jqf1SelMulti ul li {float:left;list-style:none;margin:0px;padding:0px;}
+/* END RESET */
+
+.userBox .profileSection ul li .jqf1Hidden { filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);-moz-opacity: 0;opacity:0;overflow:hidden; }
+
+/* Input text */
+  .jqf1InpTextNormal, .jqf1InpTextFocus,
+  .jqf1InpTextNormal div, .jqf1InpTextFocus div,
+  .jqf1InpTextNormal input, .jqf1InpTextFocus input { height:41px;float:left; margin:0;}
+  .jqf1InpTextNormal div, .jqf1InpTextFocus div { overflow:hidden; }
+  .jqf1InpTextNormal { background: url(../assets/input-left.png) left top no-repeat; }
+  .jqf1InpTextNormal .div { background: url(../assets/input-right.png) right top no-repeat; }
+  .jqf1InpTextNormal .div div { background: #ffffff url(../assets/input.png) left top repeat-x;margin:0px 4px; width:223px !important; }
+  * html .jqf1InpTextNormal .div div { margin:0px 1px; }
+  .jqf1InpFile, .jqf1InpFile div, .jqf1Btn, .jqf1Btn div, .jqf1Btn input, .jqf1Btn .div span { float:left;overflow:hidden; }
+  .jqf1 input, .jqf1Btn .div span { font:14px arial;padding-top:2px; }
+  .jqf1InpFile { color:gray; }
+  .jqf1Btn input, .jqf1Btn button { cursor:pointer; }
+  .jqf1Btn .div, .jqf1Btn .div div, .jqf1Btn .div span { height:40px; line-height:38px; }
+  .jqf1Btn .div div { padding:0px 4px;text-align:center;color:#fff;letter-spacing:-0.2px; }
+  .jqf1Btn .div { background: url(../assets/browse-left.png) left top no-repeat; cursor:pointer; }
+  .jqf1Btn .div div { background: url(../assets/browse-right.png) right top no-repeat; cursor:pointer; }
+  .jqf1Btn .div span { background: url(../assets/browse.png) left top repeat-x; cursor:pointer; }
+
+
+

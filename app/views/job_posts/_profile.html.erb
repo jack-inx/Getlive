@@ -1,0 +1,75 @@
+<%= form_for @recruiter, :url=>update_profile_path(:id=>@recruiter) do |recruiter| %>
+<div class="userBox">
+	<div class="profileSection">
+		<div class="ciruserBg">
+			<img src="/assets/user.png" alt="user" title="user" class="grUser" />
+		</div>
+		<ul>
+			<li>
+				<ul class="ul" style="margin-bottom:-10px; float:left;">
+					<li>
+						<label for="upload">Picture</label>
+						<input type="file" id="inpF"  name="inpF" />
+					</li>
+				</ul>
+			</li>
+			<li>
+				<label>First Name</label>
+				<div class="leftGreyBg">
+					<%= recruiter.text_field :first_name,:placeholder =>"First Name" %>
+					<!-- <input type="text" name="First Name" onclick="if(this.value=='First Name'){this.value=''}" onblur="if(this.value==''){this.value='First Name'}" /> -->
+				</div>
+			</li>
+			<li>
+				<label>Last Name</label>
+				<div class="leftGreyBg">
+					<%= recruiter.text_field :last_name,:placeholder=>"Last Name" %>
+					<!-- <input type="text" name="Last Name" onclick="if(this.value=='Last Name'){this.value=''}" onblur="if(this.value==''){this.value='Last Name'}" /> -->
+				</div>
+			</li>
+			<li>
+				<label>Postition Title</label>
+				<div class="leftGreyBg">
+					<%= recruiter.text_field :position_title,:placeholder=>"Position Title" %>
+					<!-- <input type="text" name="Postition Title" onclick="if(this.value=='Postition Title'){this.value=''}" onblur="if(this.value==''){this.value='Postition Title'}" /> -->
+				</div>
+			</li>
+			<li>
+				<label>Email Address</label>
+				<div class="leftGreyBg">
+					<%= recruiter.text_field :email,:placeholder=>"Email Address" %>
+					<!-- <input type="text" name="Email Address" onclick="if(this.value=='Email Address'){this.value=''}" onblur="if(this.value==''){this.value='Email Address'}" /> -->
+				</div>
+			</li>
+			<li>
+				<label>Phone Number</label>
+				<div class="leftGreyBg">
+					<%= recruiter.text_field :phone_number,:placeholder=>"Phone Number" %>
+					<!-- <input type="text" name="Phone Number" onclick="if(this.value=='Phone Number'){this.value=''}" onblur="if(this.value==''){this.value='Phone Number'}" /> -->
+				</div>
+			</li>
+		</ul>
+	</div>
+	<ul class="socialIcon leftMargin">
+		<li>
+			<a href="#" title="Facebook"><img src="/assets/facebook-button.png" alt="Facebook" /></a>
+		</li>
+		<li>
+			<a href="#" title="Twitter"><img src="/assets/twitter-button.png" alt="Twitter" /></a>
+		</li>
+		<li>
+			<a href="#" title="LinkedIn"><img src="/assets/linkedin-button.png" alt="LinkedIn" /></a>
+		</li>
+	</ul>
+</div>
+<div class="marCent cl">
+	<div class="subBtn fl">
+		<%= recruiter.submit "Submit", :class=> "signText" %>
+		<!-- <input type="button" value="Submit" class="signText" /> -->
+	</div>
+	<div class="cancelBtn fl">
+		<input type="button" value="Cancel" class="signText" />
+	</div>
+</div>
+
+<% end %>

@@ -1,0 +1,15 @@
+
+
+<p>
+	List of posted Jobs
+</p>
+<% @all_post.each do |f| %>
+<% if not f.job_title.eql?('') %>
+<p>
+	<%= f.job_title %> | <%= f.position %> | <%= link_to 'Candidates Applied', "/candidates/#{f.id}" %> <%= link_to "Edit", "/edit_job_post/#{f.id}" %>
+	<%= link_to "Remove", "/delete_job_post/#{f.id}", :confirm =>"Are you sure", :method=>:delete %>
+	<% jobpath = root_url.to_s + "job_detail/#{f.id}" %>
+	<%= render :partial => "share/social_script", :locals => {:jobpath => jobpath} %>
+</p>
+<% end %>
+<% end %>

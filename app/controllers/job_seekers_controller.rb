@@ -4,6 +4,10 @@ class JobSeekersController < ApplicationController
   def all_jobs
     @all_jobs = JobPost.all
   end
+  
+  def job_description
+    @job = JobPost.find params[:id]
+  end
 
   def apply_for_job
     @job = JobPost.find params[:id]

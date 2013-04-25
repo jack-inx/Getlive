@@ -14,8 +14,16 @@
 /log/*.log
 /tmp
 
+<<<<<<< HEAD
 public/system/attached_files/dumpfiles
 
 #ignore schema.rb file
 db/schema.rb
 
+=======
+#ignore all public files
+/public/*
+
+#ignore schema.rb file
+db/schema.rb
+>>>>>>> job_seeker_resume
